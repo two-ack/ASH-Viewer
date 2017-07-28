@@ -37,6 +37,7 @@ import org.ash.util.Utils;
 import org.jdesktop.swingx.treetable.TreeTableModel;
 import org.jfree.data.xy.CategoryTableXYDataset;
 
+import java.sql.Clob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -67,7 +68,7 @@ public class Database10g11gSE extends ASHDatabase {
 	private int rangeHalf = 7500;
 
 	/** The query sql. */
-	private String querySQL = "SELECT sql_id, command_type, sql_text FROM v$sql "
+	private String querySQL = "SELECT sql_id, command_type, sql_fulltext FROM v$sql "
 			+ "WHERE sql_id = ?";
 
 	/** The query ash. */
@@ -261,7 +262,7 @@ public class Database10g11gSE extends ASHDatabase {
 					String action = resultSetAsh.getString("ACTION");
 
 					// Create row for wait event 
-							if (waitTime == 0 && !waitClass.equalsIgnoreCase("Idle")) {
+					if (waitTime == 0 && !waitClass.equalsIgnoreCase("Idle")) {
 
 						try {
 							dao.ashById.putNoOverwrite(new AshIdTime(
@@ -1131,7 +1132,8 @@ public class Database10g11gSE extends ASHDatabase {
 
 			while (resultSet.next()) {
 				String sqlId = resultSet.getString("SQL_ID");
-				String sqlText = resultSet.getString("SQL_TEXT");
+				Clob clob = resultSet.getClob(3);
+				String sqlText = clob.getSubString(1, (int) clob.length());
 				String commType = Options.getInstance().getResource(
 						resultSet.getLong("COMMAND_TYPE") + "");
 				

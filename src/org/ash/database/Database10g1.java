@@ -21,6 +21,7 @@
  */
 package org.ash.database;
 
+import java.sql.Clob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -79,7 +80,7 @@ public class Database10g1 extends ASHDatabase {
 	private int rangeHalf = 7500;
 
 	/** The query sql. */
-	private String querySQL = "SELECT sql_id, command_type, sql_text FROM v$sql "
+	private String querySQL = "SELECT sql_id, command_type, sql_fulltext FROM v$sql "
 			+ "WHERE sql_id = ?";
 	
 	/** The query sql plan data. */
@@ -1064,7 +1065,8 @@ public class Database10g1 extends ASHDatabase {
 
 			while (resultSet.next()) {
 				String sqlId = resultSet.getString("SQL_ID");
-				String sqlText = resultSet.getString("SQL_TEXT");
+				Clob clob = resultSet.getClob(3);
+				String sqlText = clob.getSubString(1, (int) clob.length());
 				String commType = Options.getInstance().getResource(
 						resultSet.getLong("COMMAND_TYPE") + "");
 				
