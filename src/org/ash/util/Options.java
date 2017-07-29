@@ -92,7 +92,7 @@ public class Options {
   private final String FILESEPARATOR = System.getProperty("file.separator");
   
   /** Date format for */
-  private DateFormat dateFormatDB = new SimpleDateFormat("ddMMyyyyHHmm");	
+  private DateFormat dateFormatDB = new SimpleDateFormat("yyyyMMddHHmm");
 
   /** Set env directory for Berkley DB */
   private String envDir = "";

@@ -504,7 +504,7 @@ public class ASHDatabaseH {
 
 				Long sampleTimeLong = (long) ashIdTimeMain.getsampleTime();
 				Date td = new Date(sampleTimeLong.longValue());
-				DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH.mm.ss");
+				DateFormat df = new SimpleDateFormat("yyyy.MM.dd HH.mm.ss");
 				String reportDateStr = df.format(td);
 
             	/* Do a filter on ActiveSessionHistory by SampleID (detail). */

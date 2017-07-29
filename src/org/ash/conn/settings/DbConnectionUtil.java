@@ -87,7 +87,7 @@ public class DbConnectionUtil {
           cal.get(Calendar.HOUR_OF_DAY)+":"+
           cal.get(Calendar.MINUTE)+":"+
           cal.get(Calendar.SECOND)+
-          "','dd-mm-yyyy HH:MMM:SS')";
+          "','yyyy-mm-dd HH:MMM:SS')";
   }
 
 }

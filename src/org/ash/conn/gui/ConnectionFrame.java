@@ -431,7 +431,7 @@ public class ConnectionFrame extends JDialog {
    * @param c DbConnection
    */
   void createStorageDir(DbConnection c){
-	  DateFormat dateFormatDB = new SimpleDateFormat("ddMMyyyyHHmms");	
+	  DateFormat dateFormatDB = new SimpleDateFormat("yyyyMMddHHmms");
 	  File dirRootDatabase =
 	         new File(c.getName()
 	                 +FILESEPARATOR

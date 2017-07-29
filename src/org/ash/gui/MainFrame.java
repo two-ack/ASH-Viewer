@@ -122,7 +122,7 @@ public class MainFrame extends JFrame implements ActionListener{
 	 */
 	public MainFrame() {
 		super();
-		Options.getInstance().setDateFormat("dd.MM.yyyy hh:mm:ss");
+		Options.getInstance().setDateFormat("yyyy.MM.dd hh:mm:ss");
 		Options.getInstance().setLanguage(Locale.getDefault().getLanguage());
 		Options.getInstance().setJtextAreaSqlTextGanttHAndDetailsH();
 

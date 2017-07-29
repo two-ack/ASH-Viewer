@@ -395,7 +395,7 @@ public class MainPreview extends JPanel {
 		
 		DateFormat dateFormatDate = new SimpleDateFormat("d");
 		DateFormat dateFormatMonth = new SimpleDateFormat("MM");
-		DateFormat dateFormatData = new SimpleDateFormat("dd.MM.yyyy");
+		DateFormat dateFormatData = new SimpleDateFormat("yyyy.MM.dd");
 				
 		if ((dateFormatDate.format(start)
 				.equalsIgnoreCase( dateFormatDate.format(end)))

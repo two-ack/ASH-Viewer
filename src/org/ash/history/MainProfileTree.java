@@ -331,7 +331,7 @@ public class MainProfileTree extends JPanel {
 	}
 
 	private JScrollPane scroll = new JScrollPane();
-	private DateFormat dateFormatDB = new SimpleDateFormat("ddMMyyyyHHmms");
+	private DateFormat dateFormatDB = new SimpleDateFormat("yyyyMMddHHmms");
 	private DateFormat dateFormatFull = new SimpleDateFormat("EEE, d MMM HH:mm");
 	private List listeners = new ArrayList();
 	private final String FILESEPARATOR = System.getProperty("file.separator");

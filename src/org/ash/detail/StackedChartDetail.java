@@ -82,7 +82,7 @@ public class StackedChartDetail {
 	private ChartPanel chartPanel;
 	
 	/** The date format. */
-	private DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+	private DateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd");
 	
 	/** The current date. */
 	private Date currentDate;	
